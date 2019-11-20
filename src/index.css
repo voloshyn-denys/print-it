@@ -1,0 +1,255 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+	margin: 0 0 15px;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom-color .2s;
+	color: #563d7c;
+}
+
+a:hover {
+	border-bottom-color: #563d7c;
+}
+
+a.unbordered {
+	border-bottom: none;
+}
+
+p {
+	margin: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+}
+.text-c {
+	text-align: center;
+}
+.mt-20 {
+	margin-top: 20px;
+}
+
+.unstyle{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.header {
+	background-color: #563d7c;
+	padding: 5px 0;
+	position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header a {
+	padding: 0 10px;
+	color: #cbbde2;
+	text-decoration: none;
+}
+
+.header_nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.container {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #414042;
+	color: #fff;
+	padding: 5px 0;
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+}
+
+.hidden {
+	display: none;
+    visibility: hidden;
+}
+
+.progress {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+}
+
+.progress_item {
+	padding: 0 10px;
+}
+
+@keyframes pulse {
+	0% {
+	  transform: scale(0);
+	  opacity: 0;
+	}
+	33% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+	100% {
+	  transform: scale(3);
+	  opacity: 0;
+	}
+  }
+  .button {
+	display: inline-flex;
+	align-items: center;
+	background: #563d7c;
+	box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	height: 45px;
+	padding: 0 30px;
+	color: #fff;
+	font-family: Lato, Arial, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background .3s, transform .3s, box-shadow .3s;
+	will-change: transform;
+	width: 100%;
+	justify-content: center;
+  }
+@media(min-width: 768px) {
+	.button {
+		width: 300px;
+	}
+}
+  .button:hover {
+	background: #ac56b6;
+	box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
+	transform: translate3d(0, -2px, 0);
+  }
+  .button:active {
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+	transform: translate3d(0, 1px, 0);
+  }
+  
+  .pulse {
+	position: relative;
+  }
+  .pulse:before, .pulse:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	opacity: 0;
+	margin: auto;
+  }
+  .pulse:before {
+	animation: pulse 1.5s infinite linear;
+  }
+  .pulse:after {
+	animation: pulse 2s .4s infinite linear;
+  }
+  .pulse:hover:before, .pulse:hover:after {
+	display: none;
+  }
+  
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+}
+
+.grid_card {
+	padding: 25px;
+	background-color: #fff;
+	box-shadow: 0 0 6px rgba(0,0,0, 0.1);
+	margin: 0 0 15px 15px;
+	width: 100%;
+	border-radius: 3px;
+	text-align: center;
+	transition: box-shadow .1s;
+}
+
+.grid_card:hover {
+	box-shadow: 0 0 0 1px #563d7c;
+}
+
+@media(min-width: 768px) {
+	.grid_card {
+		width: 300px;
+	}
+}
+
+.form-group {
+	margin: 20px 0;
+}
+
+.form-group + .form-group {
+	margin-top: 30px;
+}
+
+.input-effect {
+	position: relative;
+}
+
+:focus{outline: none;}
+input[type="text"]{font: 15px/24px 'Muli', sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+.effect-17 {border: 0; padding: 4px 0; border-bottom: 1px solid #ccc; background-color: transparent;}
+.effect-17 ~ .focus-border{position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #563d7c; transition: 0.4s;}
+.effect-17:focus ~ .focus-border,
+.has-content.effect-17 ~ .focus-border{width: 100%; transition: 0.4s; left: 0;}
+.effect-17 ~ label{position: absolute; left: 0; width: 100%; top: 9px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-17:focus ~ label, .has-content.effect-17 ~ label{top: -16px; font-size: 12px; color: #563d7c; transition: 0.3s;}
+
+.autocomplete {
+	padding: 20px 0;
+}
+
+.autocomplete .input-effect {
+	margin-bottom: 15px;
+}
+
+.autocomplete_item:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+a.selected {
+	color: #fff;
+}
