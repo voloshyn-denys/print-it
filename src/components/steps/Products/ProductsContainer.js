@@ -1,13 +1,24 @@
-import React, {useState} from 'react';
-import Products from './Products';
+import React from "react";
+import Products from "./Products";
+
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
 
 const ProductsContainer = () => {
-    const [products, setProducts] = useState([
-        { id: 1, title: "Van Decals 1" },
-        { id: 2, title: "Van Decals 2" }
-      ]);
+  const { loading, data } = useQuery(GET_PRODUCTS);
 
-    return <Products products={products} /> 
-}
+  if (loading) return 'Loading...';
+
+  return <Products products={data.products} />
+};
+
+const GET_PRODUCTS = gql`
+  {
+    products {
+      id
+      title
+    }
+  }
+`;
 
 export default ProductsContainer;
