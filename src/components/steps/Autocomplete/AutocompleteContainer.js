@@ -1,18 +1,13 @@
-import {connect} from 'react-redux';
+import React, {useState} from 'react';
 import Autocomplete from './Autocomplete';
 
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
-}
-const mapStateToProps = (state) => {
-    return {
-        items: state.products.items
-    }
+const AutocompleteContainer = () => {
+    const [items, setItems] = useState([
+        { id: 11111, title: "Service One" },
+        { id: 22222, title: "Service Two" },
+        { id: 33333, title: "Service Three" }
+      ]);
+    return <Autocomplete items={items} />
 }
 
-const AutocompleteContainer = connect(mapStateToProps, mapDispatchToProps)(Autocomplete);
-
-export default AutocompleteContainer
+export default AutocompleteContainer;

@@ -1,18 +1,13 @@
-import {connect} from 'react-redux';
+import React, {useState} from 'react';
 import Products from './Products';
 
+const ProductsContainer = () => {
+    const [products, setProducts] = useState([
+        { id: 1, title: "Van Decals 1" },
+        { id: 2, title: "Van Decals 2" }
+      ]);
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
+    return <Products products={products} /> 
 }
-const mapStatetoProps = (state) => {
-    return {
-        products: state.products.products
-    }
-}
-
-const ProductsContainer = connect(mapStatetoProps, mapDispatchToProps)(Products);
 
 export default ProductsContainer;

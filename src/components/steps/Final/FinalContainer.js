@@ -1,21 +1,19 @@
-import {connect} from 'react-redux';
-import Final from './Final';
-import { removeServiceCreator } from '../../../redux/products-reducer';
+import React, { useState } from "react";
+import Final from "./Final";
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        removeItem: (serviceId) => {
-            
-            dispatch(removeServiceCreator(serviceId))
-        }
-    }
-}
-const mapStatetoProps = (state) => {
-    return {
-        services: state.products.services
-    }
-}
+const FinalContainer = () => {
+  const [services, setServices] = useState([
+    { id: 111, title: "FARDAL" },
+    { id: 222, title: "REINSVOLL 1" },
+    { id: 333, title: "REINSVOLL 2" },
+    { id: 444, title: "FORSAND" }
+  ]);
 
-const FinalContainer = connect(mapStatetoProps, mapDispatchToProps)(Final);
+  const removeServiceCreator = id => {
+    console.log(`REMOVE ${id}`);
+  };
 
-export default FinalContainer
+  return <Final services={services} removeItem={removeServiceCreator} />;
+};
+
+export default FinalContainer;
